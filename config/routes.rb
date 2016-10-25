@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'pitch#index'
+  root to: 'home#index'
   
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/pitches' => 'pitch#index'
-  get '/contacts' => 'contact#index'
+  get '/pitches' => 'pitches#index'
+  get '/contacts' => 'contacts#index'
   
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
