@@ -1,0 +1,28 @@
+%h1 Signup! 
+
+  %Form{for: @user, role: "form"}
+    .form-group
+      %Label#name
+      %Input.form-control#name
+    .form-group
+      %Label#email
+      %Input.form-control#email
+    .form-group
+      %label#password
+      %Input.form-control#password{type: "password"}
+  
+  %Submit.btn.btn-default Submit
+
+
+
+<h1>Signup!</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %>
