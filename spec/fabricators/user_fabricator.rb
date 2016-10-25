@@ -1,5 +1,5 @@
 Fabricator(:user) do
-  name            "MyString"
-  email           "MyString"
-  password_digest "MyString"
+  name            { Faker::Name.name }
+  email           { |attrs| "#{attrs[:name].parameterize}@example.com"}
+  password_digest { sequence(:password, 11111111111111) }
 end

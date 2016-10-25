@@ -38,6 +38,7 @@ group :development, :test do
   gem 'launchy'
   gem 'fabrication'
   gem 'capybara'
+  gem 'faker'
   gem 'database_cleaner'
 end
 
