@@ -35,9 +35,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rails-pry'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'launchy'
   gem 'fabrication'
-  gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
 end
