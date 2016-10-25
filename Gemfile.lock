@@ -40,7 +40,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.1.4)
+    autoprefixer-rails (6.5.1.1)
+      execjs
     bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
     capybara (2.10.1)
@@ -67,8 +72,6 @@ GEM
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    haml (4.0.7)
-      tilt
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -130,6 +133,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    rb-readline (0.5.3)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -186,13 +190,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bcrypt (~> 3.1.7)
+  bootstrap-sass (~> 3.3.6)
   byebug
   capybara
   coffee-rails (~> 4.2)
   database_cleaner
   fabrication
-  haml
   jbuilder (~> 2.5)
   jquery-rails
   launchy
@@ -200,8 +205,9 @@ DEPENDENCIES
   pg (~> 0.18)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-pry
+  rb-readline
   rspec-rails
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   tzinfo-data
   uglifier (>= 1.3.0)
   unicorn
