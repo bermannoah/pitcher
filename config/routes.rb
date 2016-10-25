@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: 'pitch#index'
   
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   get '/pitches' => 'pitch#index'
   get '/contacts' => 'contact#index'
   
