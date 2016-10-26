@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User views themself" do
+RSpec.describe "User can edit profile" do
   scenario "a user can see the edit button" do    
     user = Fabricate(:user)
     

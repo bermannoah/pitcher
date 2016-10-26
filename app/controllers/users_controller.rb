@@ -31,6 +31,12 @@ class UsersController < ApplicationController
     end
   end
   
+  def destroy
+    session.clear
+    @user.destroy
+    redirect_to "/"
+  end
+  
   
   private
   

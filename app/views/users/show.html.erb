@@ -3,4 +3,5 @@
   <p>Email: <%= current_user.email %></p>
   <p>Pitches: </p>
   <%= link_to "Edit Account", edit_user_path(current_user) %>
+  <%= link_to "Delete Account", user_path(current_user), method: :delete, data: { confirm: "Are you sure? This cannot be undone. It will delete all of your pitches and contacts forever." } %>
 </div>
