@@ -32,10 +32,17 @@ RSpec.describe "User views themself" do
     click_button "Submit"
     
     click_link "#{user.name}"
-    
+    expect(page).to have_content("Email: #{user.email}")
+
     click_link "Edit Account"
 
     fill_in "user[email]", with: "personal@email.com"
     
+    click_button "Update User"
+    click_link "#{user.name}"
+
+    expect(page).to have_content("Name: #{user.name}")
+    expect(page).to_not have_content("Email: #{user.email}")
+    expect(page).to have_content("Email: personal@email.com")
   end
 end

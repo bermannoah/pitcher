@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to login_path
     else 
       redirect_to '/signup'
     end
@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   end
   
   def update
-    if @user.update(user_params)
-      redirect_to user_path(@user)
+    if @user.update(user_edit_params)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
@@ -40,6 +40,10 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+  
+  def user_edit_params
+    params.require(:user).permit(:name, :email)
   end
   
 end

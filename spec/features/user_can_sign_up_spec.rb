@@ -28,7 +28,7 @@ RSpec.describe "User signs up" do
     fill_in "user[password]", with: "#{user.password}"
     fill_in "user[password_confirmation]", with: "#{user.password}"
     
-    click_button "Submit"
+    click_button "Save User"
     
     click_link "Login"
     
