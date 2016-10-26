@@ -36,7 +36,6 @@ group :development, :test do
   gem 'rails-pry'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'selenium-webdriver'
   gem 'launchy'
   gem 'fabrication'
   gem 'faker'
