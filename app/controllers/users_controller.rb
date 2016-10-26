@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    @hide_password_entry_form = false
   end
   
   def create
@@ -16,6 +17,18 @@ class UsersController < ApplicationController
   end
   
   def show
+  end
+  
+  def edit
+    @hide_password_entry_form = true
+  end
+  
+  def update
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
   
   
