@@ -1,0 +1,11 @@
+<%= form_for :user, url: '/users' do |f| %>
+
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  <% unless @hide_password_entry_form %>
+    Password: <%= f.password_field :password %>
+    Password Confirmation: <%= f.password_field :password_confirmation %>
+  <% end %>
+  <%= f.submit %>
+
+<% end %>
