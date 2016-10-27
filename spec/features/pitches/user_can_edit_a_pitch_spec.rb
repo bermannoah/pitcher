@@ -52,6 +52,5 @@ RSpec.describe "User can edit a pitch" do
     
     expect(page).to have_content "Serious Gravitas Deficiency"
     expect(page).to_not have_content "#{pitch.title}"
-
   end
 end

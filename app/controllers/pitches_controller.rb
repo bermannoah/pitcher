@@ -34,6 +34,12 @@ class PitchesController < ApplicationController
     end
   end
   
+  def destroy
+    @pitch = @user.pitches.find(params[:id])
+    @pitch.destroy
+    redirect_to user_path(@user)
+  end
+  
   private
   
   def set_user
