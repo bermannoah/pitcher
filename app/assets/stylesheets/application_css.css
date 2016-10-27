@@ -1,4 +1,13 @@
 body {
+  background-image: url(https://source.unsplash.com/random?newspaper);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 5em;
+}
+
+.homepage-body {
   background-image: url(https://source.unsplash.com/_IFipWi6cWc);
   background-position: center center;
   background-repeat: no-repeat;
@@ -16,4 +25,27 @@ body {
   margin-top: 10em;
   color: #8D6708;
   background-color: transparent;
+}
+
+.user-page-profile {
+  margin-left: 3em;
+  margin-right: 3em;
+  padding: 10px;
+}
+
+.user-page-text {
+  font-family: sans-serif, helvetica;
+  font-weight: bold;
+}
+
+.user-page-pitches {
+  margin-left: 3em;
+  margin-right: 3em;
+  padding: 10px;
+}
+
+.button-text-override {
+  float: right;
+  padding: 10px;
+  margin-right: 5em;
 }
