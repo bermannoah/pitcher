@@ -69,7 +69,8 @@ RSpec.describe "User can delete themself" do
   
   scenario "a user can delete itself if it has pitches" do    
     user = Fabricate(:user)
-    pitch = Fabricate(:pitch, user: user)
+    status = Fabricate(:status)
+    pitch = Fabricate(:pitch, user: user, status: status)
     
     visit root_path
     

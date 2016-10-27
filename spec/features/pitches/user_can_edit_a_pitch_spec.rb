@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "User can edit a pitch" do
   scenario "a user can see the edit button on list of pitches" do
     user = Fabricate(:user)
-    pitch = Fabricate(:pitch, user: user)
+    status = Fabricate(:status)
+    pitch = Fabricate(:pitch, user: user, status: status)
     
     visit root_path
     click_link "Login"
@@ -30,7 +31,8 @@ RSpec.describe "User can edit a pitch" do
   
   scenario "a user can go to the edit pitch page from the list of pitches" do
     user = Fabricate(:user)
-    pitch = Fabricate(:pitch, user: user)
+    status = Fabricate(:status)
+    pitch = Fabricate(:pitch, user: user, status: status)
 
     visit root_path
     click_link "Login"

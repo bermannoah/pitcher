@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "User can delete a pitch" do
   scenario "a user can see the delete button on list of pitches" do
     user = Fabricate(:user)
-    pitch = Fabricate(:pitch, user: user)
+    status = Fabricate(:status)
+    pitch = Fabricate(:pitch, user: user, status: status)
     
     visit root_path
     click_link "Login"
@@ -22,7 +23,8 @@ RSpec.describe "User can delete a pitch" do
   
   scenario "a user can delete a pitch from the list of pitches" do
     user = Fabricate(:user)
-    pitch = Fabricate(:pitch, user: user)
+    status = Fabricate(:status)
+    pitch = Fabricate(:pitch, user: user, status: status)
     
     visit root_path
     click_link "Login"

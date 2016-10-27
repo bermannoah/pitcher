@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "User can create a pitch" do
   scenario "a user is logged in and can create a pitch" do
     user = Fabricate(:user)
-    pitch = Fabricate(:pitch, user: user)
+    status = Fabricate(:status)
+    pitch = Fabricate(:pitch, user: user, status: status)
     
     visit root_path
     click_link "Login"
