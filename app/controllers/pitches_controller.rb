@@ -1,7 +1,7 @@
 class PitchesController < ApplicationController
-  
   before_action :security_redirect
   before_action :authorize
+  before_action :set_user
   
   def index
     @user = User.find(params[:user_id])
@@ -21,18 +21,36 @@ class PitchesController < ApplicationController
     end
   end
   
+  def edit
+    @pitch = Pitch.find(params[:id])
+  end
+  
+  def update
+    @pitch = @user.pitches.find(params[:id])
+    if @pitch.update(pitch_edit_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+  
   private
   
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
   end
   
   def pitch_params
     params.require(:pitch).permit(:title, :content, :user_id)
   end
   
+  def pitch_edit_params
+    params.require(:pitch).permit(:title, :content)
+  end
+
+  
   def security_redirect
-    if params[:user_id].nil?
+    if session[:user_id].nil?
       redirect_to login_path
     end
   end
