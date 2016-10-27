@@ -1,0 +1,19 @@
+<div>
+  
+  <p>
+    Title: <%= @pitch.title %>
+  </p>
+  
+  <p>
+    Content: <%= @pitch.content %>
+  </p>
+  
+  <p>
+    Status: <%= @pitch.status.title %>
+  </p>
+  
+  <p>
+    <%= link_to "Create Status", new_status_path %>
+  </p>
+  
+</div>

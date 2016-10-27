@@ -8,11 +8,17 @@ class PitchesController < ApplicationController
     @pitches = @user.pitches
   end
   
+  def show
+    @pitch = Pitch.find(params[:id])
+  end
+  
   def new
     @pitch = Pitch.new()
+    @status_options = Status.all.map{ |c| [c.title, c.id] }
   end
   
   def create
+    @status_options = Status.all.map{ |c| [c.title, c.id] }
     @pitch = @user.pitches.new(pitch_params)
     if @pitch.save
       redirect_to user_path(@user)
