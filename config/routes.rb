@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   end
   
   resources :pitches
+  resources :statuses
   
 end
