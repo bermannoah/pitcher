@@ -4,7 +4,7 @@ RSpec.describe "User can edit profile" do
   scenario "a user can see the edit button" do    
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     
     click_link "Login"
     
@@ -22,7 +22,7 @@ RSpec.describe "User can edit profile" do
   scenario "a user can edit their profile" do
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     
     click_link "Login"
     

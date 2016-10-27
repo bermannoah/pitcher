@@ -4,7 +4,7 @@ RSpec.describe "User views themself" do
   scenario "a user is logged in" do    
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     
     click_link "Login"
     
@@ -18,7 +18,7 @@ RSpec.describe "User views themself" do
   scenario "a user can view their own profile" do    
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     
     click_link "Login"
     
