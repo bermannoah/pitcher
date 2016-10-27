@@ -1,8 +1,10 @@
+require 'rails_helper'
+
 RSpec.describe "User can delete themself" do
   scenario "a user can see the delete button" do    
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     
     click_link "Login"
     
@@ -20,7 +22,7 @@ RSpec.describe "User can delete themself" do
   scenario "a user can use the delete button" do    
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     
     click_link "Login"
     
@@ -41,7 +43,7 @@ RSpec.describe "User can delete themself" do
   scenario "when deleted a user cannot login" do  
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     
     click_link "Login"
     

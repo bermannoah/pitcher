@@ -1,7 +1,10 @@
 <div>
   <p>Name: <%= current_user.name %></p>
   <p>Email: <%= current_user.email %></p>
-  <p>Pitches: </p>
+  <ul>
+  Pitches: <% @user.pitches.each do |pitch| %>
+              <li><%= link_to pitch.title, user_pitch_path(@user, pitch) %></li>
+            <% end %>
   <%= link_to "Edit Account", edit_user_path(current_user) %>
   <%= link_to "Delete Account", user_path(current_user), method: :delete, data: { confirm: "Are you sure? This cannot be undone. It will delete all of your pitches and contacts forever." } %>
 </div>

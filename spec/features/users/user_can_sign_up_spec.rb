@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User signs up" do
   scenario "a user sees the sign up button" do    
-    visit("/")
+    visit root_path
 
     expect(page).to have_content("Signup")
     
@@ -17,7 +17,7 @@ RSpec.describe "User signs up" do
   scenario "a user can sign up" do
     user = Fabricate(:user)
     
-    visit("/")
+    visit root_path
     click_link "Signup"
     
     expect(page).to have_content("Name:")

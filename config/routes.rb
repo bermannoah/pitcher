@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   
-  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    resources :pitches
+  end
+  
+  resources :pitches
   
 end

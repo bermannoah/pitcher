@@ -1,5 +1,4 @@
 Fabricator(:pitch) do
-  title   "MyString"
-  content "MyText"
-  user    nil
+  title   { Faker::Book.title }
+  content { Faker::Lorem.paragraph }
 end
