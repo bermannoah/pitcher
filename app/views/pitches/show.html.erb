@@ -9,10 +9,16 @@
   </p>
   
   <p>
-    Status: <%= @pitch.status.title %>
+    Status: 
+    <% if @pitch.status %>
+      <%= @pitch.status.title %>
+    <% else %>
+      New
+    <% end %>
   </p>
   
   <p>
+    <%= link_to "Edit Pitch", edit_pitch_path(@pitch) %>
     <%= link_to "Create Status", new_status_path %>
   </p>
   

@@ -5,6 +5,11 @@
   <%= f.label :content %>
   <%= f.text_field :content %>
   
+  <div class="statuses">
+    <%= f.label :status %>
+    <%= f.select(:status_id, @status_options) %>
+  </div>
+  
   <%= f.submit %>
 
 <% end %>

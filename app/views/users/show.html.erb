@@ -10,7 +10,7 @@
 <div class="jumbotron col-md-4 user-page-pitches">
   <ul class="user-page-text">
   Pitches: <% @user.pitches.each do |pitch| %>
-              <li><%= link_to pitch.title, user_pitch_path(@user, pitch) %></li>
+              <li><%= link_to pitch.title, user_pitch_path(@user, pitch) %> | <%= link_to pitch.status.title, statuses_path %></li>
               <%= link_to "Edit Pitch", edit_user_pitch_path(@user, pitch) %>
               <%= link_to "Delete Pitch", user_pitch_path(@user, pitch), method: :delete, data: { confirm: "Are you sure?" } %>
             <% end %>

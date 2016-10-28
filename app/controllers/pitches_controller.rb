@@ -28,10 +28,12 @@ class PitchesController < ApplicationController
   end
   
   def edit
+    @status_options = Status.all.map{ |c| [c.title, c.id] }
     @pitch = Pitch.find(params[:id])
   end
   
   def update
+    @status_options = Status.all.map{ |c| [c.title, c.id] }
     @pitch = @user.pitches.find(params[:id])
     if @pitch.update(pitch_edit_params)
       redirect_to user_path(@user)
@@ -53,11 +55,11 @@ class PitchesController < ApplicationController
   end
   
   def pitch_params
-    params.require(:pitch).permit(:title, :content, :user_id)
+    params.require(:pitch).permit(:title, :content, :user_id, :status_id)
   end
   
   def pitch_edit_params
-    params.require(:pitch).permit(:title, :content)
+    params.require(:pitch).permit(:title, :content, :status_id)
   end
 
   
