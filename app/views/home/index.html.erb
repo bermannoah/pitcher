@@ -1,1 +1,9 @@
-<h1>Welcome!</h1>
+<body class="homepage-body">
+  <div class="welcome-banner">
+    <% if current_user %>
+      <h1><%= "Welcome back, #{current_user.name}!" %></h1>
+    <% else %>
+      <h1>Welcome!</h1>
+    <% end %>
+  </div>  
+</body>
