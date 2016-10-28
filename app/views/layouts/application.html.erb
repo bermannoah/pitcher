@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-brand">
           <% if current_user %>
-            <li><p>Signed in as <%= link_to current_user.name, user_path(current_user)  %> | <%= link_to 'Logout', '/logout' %></p></li>
+            <li><p>Signed in as <%= link_to current_user.name, user_path(current_user)  %> | <%= link_to 'Logout', '/logout' %> | <%= link_to "View All Statuses", statuses_path %></p></li>
           <% else %>
             <li><p><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></p></li>
           <% end %>

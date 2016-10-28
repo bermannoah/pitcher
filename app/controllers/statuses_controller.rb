@@ -2,7 +2,8 @@ class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
   
   def index
-    @statuses = Status.all
+    @user = User.find(session[:user_id])
+    @statuses = @user.collect_statuses(@user)
   end
   
   def new
